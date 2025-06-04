@@ -17,6 +17,8 @@ public class MapperTests
         var serviceProvider = serviceCollection.BuildServiceProvider();
         
         var config = TypeAdapterConfig.GlobalSettings;
+        //config.Default.PreserveReference(true);
+        
         config.NewConfig<User, UserDto>()
             .Map(dest => dest.UserId, src => src.Id);
         
